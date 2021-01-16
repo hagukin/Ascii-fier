@@ -2,7 +2,6 @@
 import copy
 import traceback
 import tcod
-import color
 import PIL.Image
 
 # resize image accprdomg to a new width
@@ -78,7 +77,7 @@ def main(new_width=50):
         root_console = tcod.Console(screen_width, screen_height, order="F")
         testgraphic = open("ascii_img.txt").read()
         root_console.clear()
-        root_console.print(0,0, string=testgraphic, fg=color.error)
+        root_console.print(0,0, string=testgraphic, fg=(253, 106, 2))
         context.present(root_console, keep_aspect=True)
         input()
 
@@ -103,6 +102,8 @@ if __name__ == "__main__":
         ASCII_CHARS = ["@", "#", "E", "O", "T", "*", "+", "\"", ":", ",", ".", "-", "\'", "_", ".", " "]
     elif detail == 4:
         ASCII_CHARS = ["@","%","&","B","8","#","W","M","$","w","m","e","*","b","d","p","q","X","Z","Q","O","0","J","x","C","L","U","Y","z","c","v","u","n","r","/","\\","|","(",")","{","}","[","]",";",":","^","-","_",".",",",",","\'"," "]
+    elif detail == 999:
+        ASCII_CHARS = ["G", "M", "E", "S", "H", "A", "T", "I"]
     else:
         ASCII_CHARS = ["@", "$", "?", "+", ":", ".", " "]
         
